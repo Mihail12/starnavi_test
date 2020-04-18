@@ -1,0 +1,3 @@
+## Starnavi Test
+
+django project
