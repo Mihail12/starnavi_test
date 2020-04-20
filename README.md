@@ -28,6 +28,10 @@ Could be started with command(after project is started):
 
 if you want to change bot configuration please use `.config.automated_bot` file
 
+####PyTest
+
+to start test(after containers up) please type:  
+`docker exec -it starnavi_spasenko_test pytest`  
 
 # Test description
 
