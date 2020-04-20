@@ -6,18 +6,18 @@ I have chosen django framework for the task. I think it more convenient to start
 you only need [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/) to start  
 then: `docker-compose up -d` to start project
 
-and you could visit https://localhost:8000/
+and you could visit http://localhost:8000/
 
-all models can be viewed in https://localhost:8000/admin/  (with su credentials login: `admin` pass: `admin`)
+all models can be viewed in http://localhost:8000/admin/  (with su credentials login: `admin` pass: `admin`)
 
 ####The task was made in the following steps:  
-1. user signup - it is just creating user on https://localhost:8000/api/users/
-2. user login  - JWT on https://localhost:8000/api/auth/login/ (POST) and logout on https://localhost:8000/api/auth/logout (GET)
-3. post creation - https://localhost:8000/api/posts/
-4. post like - https://localhost:8000/api/likes/ (POST with data = {'post': `post_guid`, 'is_active': true})
-5. post unlike - https://localhost:8000/api/likes/ (POST with data = {'post': `post_guid`, 'is_active': false})
-6 analytics - https://localhost:8000/api/analytics/ (GET with optional parameters [date_from(format:%Y-%m-%d), date_to(format:%Y-%m-%d), post(guid), user(guid)])
-7. user activity - https://localhost:8000/api/user-activity/ (for current logged-in user)  https://localhost:8000/api/user-activity/<guid>/ (for user with the guid)
+1. user signup - it is just creating user on http://localhost:8000/api/users/
+2. user login  - JWT on http://localhost:8000/api/auth/login/ (POST) and logout on http://localhost:8000/api/auth/logout (GET)
+3. post creation - http://localhost:8000/api/posts/
+4. post like - http://localhost:8000/api/likes/ (POST with data = {'post': `post_guid`, 'is_active': true})
+5. post unlike - http://localhost:8000/api/likes/ (POST with data = {'post': `post_guid`, 'is_active': false})
+6 analytics - http://localhost:8000/api/analytics/ (GET with optional parameters [date_from(format:%Y-%m-%d), date_to(format:%Y-%m-%d), post(guid), user(guid)])
+7. user activity - http://localhost:8000/api/user-activity/ (for current logged-in user)  http://localhost:8000/api/user-activity/<guid>/ (for user with the guid)
 
 
 ####Automated Bot
