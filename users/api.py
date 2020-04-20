@@ -17,13 +17,10 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
     def get_permissions(self):
-        permission_classes = []
         if self.action == 'create':
             permission_classes = [AllowAny]
-        elif self.action == 'retrieve' or self.action == 'update' or self.action == 'partial_update':
+        else:
             permission_classes = [IsLoggedInUserOrAdmin]
-        elif self.action == 'list' or self.action == 'destroy':
-            permission_classes = [IsAdminUser]
         return [permission() for permission in permission_classes]
 
 
@@ -50,7 +47,7 @@ class UserActivityAPI(APIView):
         if kwargs.get('pk'):
             user = get_object_or_404(User, pk=kwargs['pk'])
         data = {
-            'last_login': user.last_login.strftime('%Y-%m-%d %H:%M') if user.last_login else 'never',
-            'last_request_at': user.last_request_at.strftime('%Y-%m-%d %H:%M') if user.last_request_at else 'never'
+            'last_login': user.last_login.strftime('%Y-%m-%d %H:%M:%S') if user.last_login else 'never',
+            'last_request_at': user.last_request_at.strftime('%Y-%m-%d %H:%M:%S') if user.last_request_at else 'never'
         }
         return Response(data, status=status.HTTP_200_OK)

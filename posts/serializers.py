@@ -19,5 +19,5 @@ class PostSerializer(serializers.ModelSerializer):
 class LikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Like
-        fields = ('url', 'is_active', 'user', 'post')
-        extra_kwargs = {'user': {'read_only': True},}
+        fields = ('id', 'url', 'is_active', 'user', 'post')
+        extra_kwargs = {'user': {'read_only': True}}
